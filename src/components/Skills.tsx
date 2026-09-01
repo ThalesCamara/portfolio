@@ -1,4 +1,6 @@
 import { portfolio } from "../data/portfolio";
+import Reveal from "./Reveal";
+import SectionArrow from "./SectionArrow";
 
 function Skills() {
   const categories = [
@@ -25,8 +27,9 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="bg-slate-950 px-6 py-24">
+    <section id="skills" className="relative bg-slate-950 px-6 py-24">
       <div className="mx-auto max-w-6xl">
+        <Reveal>
         <div className="max-w-3xl">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-blue-400">
             Tecnologias
@@ -41,8 +44,10 @@ function Skills() {
             projetos que desenvolvo.
           </p>
         </div>
+        </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <Reveal className="mt-12">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((category) => (
             <div
               key={category.title}
@@ -65,7 +70,12 @@ function Skills() {
             </div>
           ))}
         </div>
+        </Reveal>
       </div>
+      <SectionArrow
+        href="#projects"
+        label="Ir para a seção Projetos"
+      />
     </section>
   );
 }

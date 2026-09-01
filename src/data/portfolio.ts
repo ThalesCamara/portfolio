@@ -92,7 +92,7 @@ export const portfolio = {
   certifications: [
     {
       title: "Cambridge English",
-      description: "Certificação de proficiência em inglês — nível C1.",
+      description: "Certificação de proficiência em inglês — nível C2.",
     },
     {
       title: "TOEFL",
