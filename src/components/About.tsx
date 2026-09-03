@@ -1,120 +1,41 @@
 import { portfolio } from "../data/portfolio";
 import Reveal from "./Reveal";
-import SectionArrow from "./SectionArrow";
 
 function About() {
+  const highlights = [
+    { number: "01", label: "Formação", value: portfolio.education.course, detail: portfolio.education.institution },
+    { number: "02", label: "Foco", value: "Desenvolvimento Backend", detail: "Java, APIs e bancos de dados" },
+    { number: "03", label: "Localização", value: portfolio.personal.location, detail: "Brasil" },
+  ];
+
   return (
-    <section id="about" className="relative bg-slate-900 px-6 py-24">
+    <section id="about" className="section-shell bg-slate-900 px-6 py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <div className="max-w-3xl">
-            <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-blue-400">
-              Sobre mim
-            </p>
-
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
-              Conheça um pouco mais sobre mim
-            </h2>
-
-            <p className="mt-6 text-lg leading-relaxed text-slate-400">
-              {portfolio.about.text}
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal className="mt-12">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 10 12 5 2 10l10 5 10-5Z" />
-                  <path d="M6 12v5c3 2 9 2 12 0v-5" />
-                </svg>
-              </div>
-
-              <h3 className="text-lg font-semibold text-white">
-                Ciência da Computação
-              </h3>
-
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                Estudante da PUC Minas, construindo uma base sólida em
-                programação e engenharia de software.
-              </p>
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+            <div>
+              <p className="section-kicker">01 / Sobre</p>
+              <h2 className="section-title">Código com propósito e aprendizado constante.</h2>
             </div>
-
-            <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect width="20" height="14" x="2" y="5" rx="2" />
-                  <path d="M8 10h8" />
-                  <path d="M8 14h5" />
-                </svg>
-              </div>
-
-              <h3 className="text-lg font-semibold text-white">
-                Desenvolvimento
-              </h3>
-
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                Interesse em desenvolvimento backend, APIs, bancos de dados e
-                construção de aplicações.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-slate-950/50 p-6">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 2a10 10 0 1 0 10 10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-              </div>
-
-              <h3 className="text-lg font-semibold text-white">
-                Aprendizado contínuo
-              </h3>
-
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                Sempre buscando aprender novas tecnologias e transformar
-                conhecimento em projetos práticos.
-              </p>
+            <div className="lg:pt-9">
+              <p className="text-xl leading-9 text-slate-300">{portfolio.about.text}</p>
+              <p className="mt-6 border-l-2 border-blue-500 pl-5 text-base leading-7 text-slate-400">Meu principal interesse é desenvolvimento backend, especialmente com Java, sem deixar de explorar inteligência artificial e desenvolvimento full stack.</p>
             </div>
           </div>
         </Reveal>
+        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">
+          {highlights.map((item, index) => (
+            <Reveal key={item.label} delay={index * 100}>
+              <article className="h-full bg-slate-950/70 p-7 transition hover:bg-slate-950">
+                <span className="font-mono text-xs text-blue-400">{item.number}</span>
+                <p className="mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{item.label}</p>
+                <h3 className="mt-2 text-lg font-semibold text-white">{item.value}</h3>
+                <p className="mt-2 text-sm text-slate-400">{item.detail}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </div>
-      <SectionArrow
-        href="#skills"
-        label="Ir para a seção Skills"
-      />
     </section>
   );
 }

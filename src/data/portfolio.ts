@@ -5,9 +5,9 @@ export const portfolio = {
     description:
       "Desenvolvedor apaixonado por tecnologia, com foco em desenvolvimento de software, backend e inteligência artificial.",
     location: "Belo Horizonte, Brasil",
-    email: "SEU_EMAIL_AQUI",
-    github: "SEU_GITHUB_AQUI",
-    linkedin: "SEU_LINKEDIN_AQUI",
+    email: "thalesdcamara@gmail.com",
+    github: "https://github.com/ThalesCamara",
+    linkedin: "https://www.linkedin.com/in/thales-duque/",
   },
 
   about: {
@@ -56,36 +56,62 @@ export const portfolio = {
       "JSON",
     ],
 
-    ai: [
-      "Python",
-      "Machine Learning",
-      "Artificial Intelligence",
-    ],
+    aiAgents: ["Claude Code", "Gemini", "Codex"],
   },
 
   projects: [
     {
-      title: "Catálogo de Filmes",
+      title: "CineMatch",
       description:
-        "Aplicação backend desenvolvida com Java e Spring Boot, utilizando PostgreSQL para gerenciamento dos dados.",
-      technologies: ["Java", "Spring Boot", "PostgreSQL", "Maven"],
-      github: "#",
+        "Aplicação full stack para explorar filmes e gerenciar favoritos, com login de usuários, API REST em Java e persistência de dados no PostgreSQL.",
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "PostgreSQL",
+        "JavaScript",
+      ],
+      github: "https://github.com/ThalesCamara/catalogo-de-filmes",
     },
 
     {
       title: "SafeStadium",
       description:
-        "Projeto web desenvolvido para gerenciamento e organização de informações relacionadas a estádios.",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "JSON Server"],
+        "Sistema acadêmico para gestão de segurança em estádios, com controle de usuários, eventos, movimentações, incidentes e identificação por inteligência artificial.",
+      technologies: [
+        "Java 21",
+        "SparkJava",
+        "PostgreSQL",
+        "Supabase",
+        "JavaScript",
+        "Clarifai",
+      ],
       github: "#",
+      isPrivate: true,
     },
 
     {
-      title: "Resume Matcher",
+      title: "Portfólio Pessoal",
       description:
-        "Projeto voltado para análise e comparação de currículos utilizando técnicas de processamento e inteligência artificial.",
-      technologies: ["Python", "AI", "Machine Learning"],
-      github: "#",
+        "Landing page responsiva desenvolvida para apresentar minha trajetória, habilidades e projetos, com interface dark, animações suaves e conteúdo organizado em componentes reutilizáveis.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      github: "https://github.com/ThalesCamara/portfolio",
+    },
+  ],
+
+  academicRepositories: [
+    {
+      title: "Algoritmos e Estruturas de Dados II",
+      description:
+        "Repositório dedicado aos laboratórios, trabalhos práticos e estudos da disciplina, com foco em Java e na implementação de algoritmos de ordenação, pesquisa e estruturas de dados.",
+      topics: [
+        "Java",
+        "Ordenação",
+        "Pesquisa",
+        "Recursão",
+        "Árvores",
+        "Estruturas de Dados",
+      ],
+      github: "https://github.com/ThalesCamara/aeds2",
     },
   ],
 
